@@ -1,0 +1,16 @@
+{
+  "name": "2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "2.js",
+  "devDependencies": {
+    "jest": "^30.3.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "RizoBoy",
+  "license": "ISC",
+  "type": "commonjs"
+}
