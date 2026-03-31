@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test QuerySelectorAll</title>
+    <style>
+        .box { padding: 10px; margin: 5px; border: 1px solid #ccc; }
+        .active { background-color: lightgreen; }
+        .red { color: red; }
+    </style>
+</head>
+<body>
+    <h1 id="header">Test Page</h1>
+    <div class="container">
+        <div class="box active">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box red">Box 3</div>
+        <section>
+            <p class="text active">Paragraph 1</p>
+            <p class="text">Paragraph 2</p>
+            <div class="nested">
+                <span class="active">Nested span 1</span>
+                <span>Nested span 2</span>
+            </div>
+        </section>
+    </div>
+    <footer id="footer">
+        <p class="text">Footer text</p>
+    </footer>
+   <script src="4.js"></script>
+</body>
+</html>
