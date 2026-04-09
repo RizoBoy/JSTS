@@ -6,7 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "node tests/runner.js",
+    "test:reducer": "node tests/tasksReducer.test.js",
+    "test:debounce": "node tests/debounce.test.js",
+    "test:clone": "node tests/clone.test.js",
+    "test:deepEqual": "node tests/deepEqual.test.js"
   },
   "devDependencies": {
     "vite": "^8.0.0"
