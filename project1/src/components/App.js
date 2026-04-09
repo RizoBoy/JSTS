@@ -45,7 +45,7 @@ export class App extends BaseComponent {
     aboutBtn.textContent = 'About';
 
     aboutBtn.onclick = () => {
-      location.hash = '/about';
+      this.props.router.navigate('/about');
     };
 
     root.appendChild(title);

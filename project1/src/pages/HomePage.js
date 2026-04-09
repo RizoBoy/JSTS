@@ -16,7 +16,8 @@ export class HomePage extends BaseComponent {
     container.style.flexDirection = 'column';
 
     const app = createComponent(App, {
-      store: this.store
+      store: this.store,
+      router: this.props.router
     });
 
     container.appendChild(app.el);

@@ -1,15 +1,21 @@
 export class Router {
   constructor(routes, options = {}, rootId = 'app') {
     this.routes = routes;
-    this.options = options;
+    this.options = { ...options, router: this };
     this.root = document.getElementById(rootId);
     this.currentPage = null;
 
-    window.addEventListener('hashchange', () => this.render());
+    // Listen for browser back/forward buttons
+    window.addEventListener('popstate', () => this.render());
   }
 
   getPath() {
-    return location.hash.slice(1) || '/';
+    return location.pathname || '/';
+  }
+
+  navigate(path) {
+    history.pushState(null, '', path);
+    this.render();
   }
 
   render() {

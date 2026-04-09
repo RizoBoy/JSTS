@@ -22,7 +22,7 @@ export class AboutPage extends BaseComponent {
     mainBtn.textContent = 'Go Back';
 
     mainBtn.onclick = () => {
-      location.hash = '/';
+      this.props.router.navigate('/');
     };
 
     container.appendChild(title);
