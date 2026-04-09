@@ -23,13 +23,13 @@ function sum(acc, cur) {
 }
 
 describe("reducer", () => {
-  test("sum 1", () => { expect(Reduce([1, 2, 3, 4], sum)).toBe(10); });
-  test("sum 2", () => { expect(Reduce([1, 2, 3, 4], sum, 3)).toBe(13); });
-  test("sum 3", () => { expect(Reduce([1, 2, 3, 4, 5], (acc, cur) => { return acc + cur; } )).toBe(15); });
-  test("sum 4", () => { expect(Reduce([5], sum, 3)).toBe(8); });
-  test("sum 5", () => { expect(Reduce([1, , 5], sum)).toBe(6); });
+    test("sum 1", () => { expect(Reduce([1, 2, 3, 4], sum)).toBe(10); });
+    test("sum 2", () => { expect(Reduce([1, 2, 3, 4], sum, 3)).toBe(13); });
+    test("sum 3", () => { expect(Reduce([1, 2, 3, 4, 5], (acc, cur) => { return acc + cur; } )).toBe(15); });
+    test("sum 4", () => { expect(Reduce([5], sum, 3)).toBe(8); });
+    test("sum 5", () => { expect(Reduce([1, , 5], sum)).toBe(6); });
 
-  test("error 1", () => { expect(() => Reduce(123, sum)).toThrow("No Array found"); });
-  test("error 2", () => { expect(() => Reduce([], sum)).toThrow("Array is empty"); });
-  test("error 3", () => { expect(() => Reduce([1, 2, 3], null)).toThrow("No Function found"); });
+    test("error 1", () => { expect(() => Reduce(123, sum)).toThrow("No Array found"); });
+    test("error 2", () => { expect(() => Reduce([], sum)).toThrow("Array is empty"); });
+    test("error 3", () => { expect(() => Reduce([1, 2, 3], null)).toThrow("No Function found"); });
 });
