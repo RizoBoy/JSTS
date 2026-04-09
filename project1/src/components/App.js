@@ -10,6 +10,17 @@ export class App extends BaseComponent {
   }
 
   render() {
+    document.title = 'MiniReduxApp';
+
+    let icon = document.querySelector('link[rel="icon"]');
+    if (!icon) {
+      icon = document.createElement('link');
+      icon.rel = 'icon';
+      icon.type = 'image/svg+xml';
+      document.head.appendChild(icon);
+    }
+    icon.href = '/favicon.svg';
+
     const root = document.createElement('div');
     
     root.style.display = 'flex';

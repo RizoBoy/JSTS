@@ -5,7 +5,6 @@ export class Router {
     this.root = document.getElementById(rootId);
     this.currentPage = null;
 
-    // Listen for browser back/forward buttons
     window.addEventListener('popstate', () => this.render());
   }
 
