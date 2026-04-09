@@ -6,15 +6,24 @@ export class TaskList extends BaseComponent {
   render() {
     const container = document.createElement('div');
 
-    container.style.display = 'flex';
-    container.style.flexDirection = 'column';
-    container.style.gap = '10px';
+    container.style.cssText = `
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    `;
 
     const tasks = this.props.tasks || [];
 
     if (tasks.length === 0) {
       const empty = document.createElement('div');
-      empty.textContent = 'NOthing';
+      empty.textContent = '📝 No tasks yet';
+      empty.style.cssText = `
+        text-align: center;
+        padding: 48px 24px;
+        color: #999;
+        font-size: 1.1rem;
+        font-weight: 500;
+      `;
       container.appendChild(empty);
       return container;
     }
