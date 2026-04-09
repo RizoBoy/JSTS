@@ -2,7 +2,7 @@ import assert from 'assert';
 import { debounce } from '../src/utils/debounce.js';
 
 describe('debounce', () => {
-  test('should call function after delay', (done) => {
+  test('1', (done) => {
     let callCount = 0;
     const fn = debounce(() => {
       callCount++;
@@ -17,7 +17,7 @@ describe('debounce', () => {
     }, 100);
   });
 
-  test('should only call function once when called multiple times within delay', (done) => {
+  test('2', (done) => {
     let callCount = 0;
     const fn = debounce(() => {
       callCount++;
@@ -33,7 +33,7 @@ describe('debounce', () => {
     }, 100);
   });
 
-  test('should call function again after delay for new invocation', (done) => {
+  test('3', (done) => {
     let callCount = 0;
     const fn = debounce(() => {
       callCount++;
@@ -48,7 +48,7 @@ describe('debounce', () => {
     }, 150);
   });
 
-  test('should pass arguments to debounced function', (done) => {
+  test('4', (done) => {
     let result = null;
     const fn = debounce((a, b) => {
       result = a + b;
@@ -62,7 +62,7 @@ describe('debounce', () => {
     }, 100);
   });
 
-  test('should use default delay of 300ms', (done) => {
+  test('5', (done) => {
     let callCount = 0;
     const fn = debounce(() => {
       callCount++;
@@ -92,19 +92,19 @@ function test(name, fn) {
   if (isAsync) {
     fn((error) => {
       if (error) {
-        console.log(`  ✗ ${name}`);
-        console.error(`    ${error.message}`);
+        console.log(`✗ ${name}`);
+        console.error(`${error.message}`);
       } else {
-        console.log(`  ✓ ${name}`);
+        console.log(`✓ ${name}`);
       }
     });
   } else {
     try {
       fn();
-      console.log(`  ✓ ${name}`);
+      console.log(`✓ ${name}`);
     } catch (error) {
-      console.log(`  ✗ ${name}`);
-      console.error(`    ${error.message}`);
+      console.log(`✗ ${name}`);
+      console.error(`${error.message}`);
     }
   }
 }

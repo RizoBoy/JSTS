@@ -2,12 +2,12 @@ import assert from 'assert';
 import { tasksReducer } from '../src/store/reducers/tasksReducer.js';
 
 describe('tasksReducer', () => {
-  test('should return initial state when no action is passed', () => {
+  test('1', () => {
     const state = tasksReducer();
     assert.deepStrictEqual(state, { tasks: [] });
   });
 
-  test('should add a task', () => {
+  test('2', () => {
     const initialState = { tasks: [] };
     const action = {
       type: 'ADD_TASK',
@@ -20,7 +20,7 @@ describe('tasksReducer', () => {
     assert.deepStrictEqual(newState.tasks[0], { id: 1, title: 'Test Task', completed: false });
   });
 
-  test('should remove a task by id', () => {
+  test('3', () => {
     const initialState = {
       tasks: [
         { id: 1, title: 'Task 1', completed: false },
@@ -38,7 +38,7 @@ describe('tasksReducer', () => {
     assert.strictEqual(newState.tasks[0].id, 2);
   });
 
-  test('should update a task', () => {
+  test('4', () => {
     const initialState = {
       tasks: [
         { id: 1, title: 'Task 1', completed: false },
@@ -61,7 +61,7 @@ describe('tasksReducer', () => {
     assert.strictEqual(newState.tasks[1].title, 'Task 2');
   });
 
-  test('should maintain immutability - not modify original state', () => {
+  test('5', () => {
     const initialState = {
       tasks: [{ id: 1, title: 'Task 1', completed: false }]
     };
@@ -76,7 +76,7 @@ describe('tasksReducer', () => {
     assert.strictEqual(newState.tasks.length, 2);
   });
 
-  test('should return same state for unknown action', () => {
+  test('6', () => {
     const initialState = { tasks: [{ id: 1, title: 'Task', completed: false }] };
     const action = {
       type: 'UNKNOWN_ACTION',
@@ -97,9 +97,9 @@ function describe(name, fn) {
 function test(name, fn) {
   try {
     fn();
-    console.log(`  ✓ ${name}`);
+    console.log(`✓ ${name}`);
   } catch (error) {
-    console.log(`  ✗ ${name}`);
-    console.error(`    ${error.message}`);
+    console.log(`✗ ${name}`);
+    console.error(`${error.message}`);
   }
 }

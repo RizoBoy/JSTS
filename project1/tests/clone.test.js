@@ -2,7 +2,7 @@ import assert from 'assert';
 import { clone } from '../src/utils/clone.js';
 
 describe('clone', () => {
-  test('should clone primitive values', () => {
+  test('primitive', () => {
     assert.strictEqual(clone(42), 42);
     assert.strictEqual(clone('hello'), 'hello');
     assert.strictEqual(clone(true), true);
@@ -10,7 +10,7 @@ describe('clone', () => {
     assert.strictEqual(clone(undefined), undefined);
   });
 
-  test('should clone arrays', () => {
+  test('arrays', () => {
     const original = [1, 2, 3];
     const cloned = clone(original);
     
@@ -18,7 +18,7 @@ describe('clone', () => {
     assert.notStrictEqual(cloned, original);
   });
 
-  test('should clone nested arrays', () => {
+  test('nested arrays', () => {
     const original = [1, [2, 3], [4, [5, 6]]];
     const cloned = clone(original);
     
@@ -29,7 +29,7 @@ describe('clone', () => {
     assert.notStrictEqual(cloned[2][1], original[2][1]);
   });
 
-  test('should clone objects', () => {
+  test('objects', () => {
     const original = { a: 1, b: 2, c: 3 };
     const cloned = clone(original);
     
@@ -37,7 +37,7 @@ describe('clone', () => {
     assert.notStrictEqual(cloned, original);
   });
 
-  test('should clone nested objects', () => {
+  test('nested objects', () => {
     const original = { a: 1, b: { c: 2, d: { e: 3 } } };
     const cloned = clone(original);
     
@@ -47,7 +47,7 @@ describe('clone', () => {
     assert.notStrictEqual(cloned.b.d, original.b.d);
   });
 
-  test('should clone mixed object and array structures', () => {
+  test('mixed structures', () => {
     const original = {
       name: 'Test',
       items: [1, 2, { nested: true }],
@@ -62,7 +62,7 @@ describe('clone', () => {
     assert.notStrictEqual(cloned.config, original.config);
   });
 
-  test('should create independent clones', () => {
+  test('independent clones', () => {
     const original = { a: { b: 1 } };
     const cloned = clone(original);
     
@@ -72,12 +72,12 @@ describe('clone', () => {
     assert.strictEqual(cloned.a.b, 99);
   });
 
-  test('should handle empty arrays and objects', () => {
+  test('empty arrays and objects', () => {
     assert.deepStrictEqual(clone([]), []);
     assert.deepStrictEqual(clone({}), {});
   });
 
-  test('should handle arrays with mixed types', () => {
+  test('arrays with mixed types', () => {
     const original = [1, 'string', true, null, { key: 'value' }, [1, 2]];
     const cloned = clone(original);
     
@@ -96,9 +96,9 @@ function describe(name, fn) {
 function test(name, fn) {
   try {
     fn();
-    console.log(`  ✓ ${name}`);
+    console.log(`✓ ${name}`);
   } catch (error) {
-    console.log(`  ✗ ${name}`);
-    console.error(`    ${error.message}`);
+    console.log(`✗ ${name}`);
+    console.error(`${error.message}`);
   }
 }
