@@ -7,6 +7,7 @@ Function.prototype.myCall = function (context) {
     const args = [];
 
     for (let i = 1; i < arguments.length; i++) {
+        args.push(arguments[i]);
     }
 
     return context.tempFunction(...args);
