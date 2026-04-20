@@ -1,0 +1,44 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+
+    .image-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+
+        button {
+            font-size: 2rem;
+            padding: 10px;
+            margin: 0 20px;
+            cursor: pointer;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+
+            &:hover {
+                background: #e0e0e0;
+            }
+        }
+
+        img {
+            max-width: 100%;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    input[type='range'] {
+        width: 300px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        margin: 0;
+        font-size: 1.2rem;
+    }
+}
