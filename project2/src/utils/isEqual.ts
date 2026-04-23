@@ -1,3 +1,9 @@
+/**
+ * Deep equality check for two values
+ * @param a - First value
+ * @param b - Second value
+ * @returns True if values are equal, false otherwise
+ */
 export function isEqual(a: unknown, b: unknown): boolean {
     if (a === b) {
         return true;

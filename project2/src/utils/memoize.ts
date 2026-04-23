@@ -1,3 +1,8 @@
+/**
+ * Memoizes a function, caching its results based on arguments
+ * @param fn - The function to memoize
+ * @returns The memoized function
+ */
 export function memoize<F extends (...args: never[]) => unknown>(fn: F): F {
     const cache = new Map<string, ReturnType<F>>();
 

@@ -1,3 +1,9 @@
+/**
+ * Deep merges two objects
+ * @param a - The first object
+ * @param b - The second object
+ * @returns The merged object
+ */
 export function mergeDeep<A extends Record<string, unknown>, B extends Record<string, unknown>>(a: A, b: B): A & B {
     const result = { ...a } as Record<string, unknown>;
 

@@ -1,5 +1,7 @@
+// Export types
 export * from './types';
 
+// Export utilities
 export { deepClone } from './utils/deepClone';
 export { debounce } from './utils/debounce';
 export { memoize } from './utils/memoize';

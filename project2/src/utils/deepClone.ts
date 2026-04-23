@@ -1,3 +1,8 @@
+/**
+ * Deep clones an object, preserving all nested structures
+ * @param obj - The object to clone
+ * @returns A deep clone of the input object
+ */
 export function deepClone<T>(obj: T): T {
     if (obj === null || typeof obj !== 'object') {
         return obj;
